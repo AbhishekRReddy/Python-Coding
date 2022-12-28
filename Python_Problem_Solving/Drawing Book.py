@@ -1,6 +1,3 @@
-'''
-https://www.hackerrank.com/challenges/drawing-book/problem?isFullScreen=true
-'''
 #!/bin/python3
 
 import math
@@ -17,15 +14,13 @@ import sys
 #  1. INTEGER n
 #  2. INTEGER p
 #
+
 def pageCount(n, p):
     # Write your code here
-    pages=[]
-    pages.append(1)
-    if(n%2==1):
-        for i in range(1,int((n-1)/2)+1):
-            pages[i].append((i+1,i+2))
-        
-    print(pages) 
+    from_front=p//2
+    from_back=n//2-from_front
+    return(min(from_front,from_back))
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
