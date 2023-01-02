@@ -13,15 +13,12 @@ def getMoneySpent(keyboards, drives, b):
     # Write your code here.
     #
     max_spent=-1
-    cartesian_prod=[i+j for i in keyboards for j in drives ]
-    for pair in cartesian_prod:
-        if pair<=b and pair>max_spent:
-            max_spent=pair
-    return max_spent   
-    
-    
-    
-    
+    for i in keyboards:
+         for j in drives:
+            if(i+j<=b and i+j>max_spent):
+                max_spent=i+j
+  
+    return max_spent 
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
