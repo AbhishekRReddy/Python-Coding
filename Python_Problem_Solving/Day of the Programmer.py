@@ -34,9 +34,7 @@ def dayOfProgrammer(year):
         else:
             day=256-(31*5+30*2+28)
         return f'{day}.09.{year}'
-                   
-             
-             
+                          
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
