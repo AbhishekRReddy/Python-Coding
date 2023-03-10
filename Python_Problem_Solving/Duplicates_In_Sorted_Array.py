@@ -1,20 +1,19 @@
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
         a = nums
-        length = len(a)
+        l = len(a)
         current_elem = a[0]
-        last_elem = a[length-1]
-        counter = 1
-        i = 1
-        while current_elem != last_elem:
-            if a[i] == a[i-1]:
-                for j in range(i, length-1):
-                    a[j] = a[j+1]
+        last_elem = a[l-1]
+        insert_pos = 1
+        for i in range(1, l):
+            if current_elem == a[i]:
                 continue
+            a[insert_pos] = a[i]
             current_elem = a[i]
-            counter += 1
-            i += 1
-        return counter
+            if current_elem == last_elem:
+                return insert_pos+1
+            insert_pos += 1
+        return insert_pos
 
 
 
