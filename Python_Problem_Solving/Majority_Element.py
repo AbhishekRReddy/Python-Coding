@@ -2,7 +2,7 @@
 https://leetcode.com/problems/majority-element/description/
 '''
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
+    def majorityElement(self, nums) -> int:
         dict ={}
         for i,elem in enumerate(nums):
             dict.setdefault(elem,0)
