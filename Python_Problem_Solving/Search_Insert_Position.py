@@ -23,7 +23,7 @@ class Solution:
             else:
                 return self.binary_search(nums,target,mid+1,high)
 
-    def searchInsert(self, nums: List[int], target: int) -> int:
+    def searchInsert(self, nums, target) -> int:
         high = len(nums)-1
         return self.binary_search(nums,target,0,high)
 
