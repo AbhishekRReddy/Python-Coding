@@ -1,10 +1,8 @@
 '''
 https://leetcode.com/problems/plus-one/description/
 '''
-
-
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
+    def plusOne(self, digits):
         digits = [str(x) for x in digits]
         num = int(''.join(digits))
         num += 1
