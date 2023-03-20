@@ -9,4 +9,4 @@ def fibo(n):
     for i in range(n+1):
         print(_fibo(i),end=' ')
 
-print(fibo(6))
+print(fibo(35))
