@@ -13,4 +13,14 @@ class Solution:
         print(pascals_triangle)
         return pascals_triangle
 
-   
+#The above code works only till the 5 rows. But to get more than that, we need implement like following
+class Solution:
+    def generate(self, numRows: int) -> list[list[int]]:
+        pascals_triangle = [[1]]
+        for _ in range(1, numRows):
+            temp = [0] + pascals_triangle[-1] + [0]
+            new_row = []
+            for j in range(len(temp)-1):
+                new_row.append(temp[j] + temp[j+1])
+            pascals_triangle.append(new_row)
+        return pascals_triangle

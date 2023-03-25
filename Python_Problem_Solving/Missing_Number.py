@@ -10,7 +10,7 @@ https://leetcode.com/problems/missing-number/description/
 '''
 
 class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
+    def missingNumber(self, nums: list[int]) -> int:
         l = len(nums)
         theor_sum = l*(l+1)//2
         actual_sum = sum(nums)
