@@ -4,7 +4,7 @@ https://leetcode.com/problems/pascals-triangle/
 #Intersting problem, the key here is to understand the logic behid the pascals triangle
 #Each row is power to 11
 class Solution:
-    def generate(self, numRows: int) -> List[List[int]]:
+    def generate(self, numRows: int) -> list[list[int]]:
         pascals_triangle = []
         for row in range(numRows):
             new_row = str(11**row)
