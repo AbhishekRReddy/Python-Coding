@@ -2,10 +2,8 @@
 https://leetcode.com/problems/container-with-most-water/description/
 
 '''
-
-
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, height: list[int]) -> int:
         i = 0 #left pointer
         j =len(height)-1 #right pointer
         water = 0 #Current area of the water
