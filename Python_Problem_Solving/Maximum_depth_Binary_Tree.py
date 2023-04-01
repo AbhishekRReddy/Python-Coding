@@ -8,7 +8,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 #         self.left = left
 #         self.right = right
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+    def maxDepth(self, root) -> int:
         def max_depth(root,depth):
             if root is None:
                 return depth
