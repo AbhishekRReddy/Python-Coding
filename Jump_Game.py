@@ -34,7 +34,7 @@ class Solution:
         else:
             return True
 
-#Below is more optimal solution as it uses the O(n) time complexities.
+#Below is more optimal solution as it is just O(n) time complexity.
 class Solution:
     def canJump(self, nums: list[int]) -> bool:
         current_max = 0
