@@ -1,8 +1,6 @@
 '''
 https://leetcode.com/problems/jump-game/description/
 '''
-
-
 class Solution:
     def canJump(self, nums: list[int]) -> bool:
         zero_pos = []
