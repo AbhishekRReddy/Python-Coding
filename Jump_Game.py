@@ -34,3 +34,19 @@ class Solution:
         else:
             return True
 
+#Below is more optimal solution as it uses the O(n) time complexities.
+class Solution:
+    def canJump(self, nums: list[int]) -> bool:
+        current_max = 0
+        for i,jump in enumerate(nums):
+            if i > current_max:
+                #if we already in certain position, but we did not reached here
+                #with maximum jump.
+                return False
+            #Greedilt choose the maximum jump
+            current_max = max(i+jump, current_max)
+            #If the maximum jumpable position is greater than equal to
+            #length of the array, then return True
+            if current_max >= len(nums):
+                return True
+        return True
