@@ -14,7 +14,7 @@ def loot(nums,i,dp):
     return dp[i]
 
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) == 1:
             return nums[0]
         dp ={}
@@ -39,9 +39,33 @@ def loot(nums,i):
     return dp[-1]
 
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) == 1:
             return nums[0]
         solA = loot(nums[:-1],len(nums)-2)
         solB = loot(nums[1:],len(nums)-2)
         return max(solA,solB)
+
+'''
+Tabular method with Space Optimization.
+'''
+def loot(nums,i):
+    prev1 = nums[0]
+    prev2 = 0
+    curri = nums[0]
+    for i in range(1,len(nums)):
+        left = nums[i] + prev2
+        right = prev1
+        curri = max(left, right)
+        prev2 = prev1
+        prev1 =curri
+    return curri
+
+class Solution:
+    def rob(self, nums: list[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        solA = loot(nums[:-1],len(nums)-2)
+        solB = loot(nums[1:],len(nums)-2)
+        return max(solA,solB)
+
