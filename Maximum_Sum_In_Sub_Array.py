@@ -38,6 +38,21 @@ def maximumNonAdjacentSum(nums):
         dp[i] = max(take,non_take)
     return dp[-1]
 
+'''
+DP in tabular method with space optimization
+'''
+def maximumNonAdjacentSum(nums): 
+    dp = [0]*len(nums)
+    prev1 = nums[0]
+    prev2 = 0
+    curri = nums[0]
+    for i in range(1,len(nums)):
+        take = nums[i] + prev2 
+        non_take = prev1
+        curri= max(take,non_take)
+        prev2 = prev1
+        prev1 = curri
+    return curri
 
 
 
