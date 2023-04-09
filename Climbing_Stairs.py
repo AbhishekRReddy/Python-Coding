@@ -2,8 +2,6 @@
 https://leetcode.com/problems/climbing-stairs/description/
 Memoization 
 '''
-
-
 def stairs(n,dp):
     if n == 1:
         return 1
