@@ -24,6 +24,32 @@ def max_sum(nums,index,dp):
     dp[index] = max(left,right)
     return dp[index]
 
+''''
+Dynamic programming in tabular method
+'''
+def maximumNonAdjacentSum(nums): 
+    dp = [0]*len(nums)
+    dp[0] = nums[0]
+    for i in range(1,len(nums)):
+        take = nums[i]
+        if i>1:
+            take += dp[i-2]
+        non_take = dp[i-1]
+        dp[i] = max(take,non_take)
+    return dp[-1]
+
+
+
+
+
+
+
+
+
+
+
+
+
 def maximumNonAdjacentSum(nums): 
     dp = {}   
     return max_sum(nums,len(nums)-1,dp)
@@ -38,3 +64,4 @@ while t > 0:
     print(maximumNonAdjacentSum(arr))
     
     t -= 1
+
