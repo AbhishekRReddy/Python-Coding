@@ -22,3 +22,26 @@ class Solution:
         dp ={}
         solB = loot(nums[1:],len(nums)-2, dp)
         return max(solA,solB)
+
+
+'''
+Tabular method
+'''
+def loot(nums,i):
+    dp =[0]*len(nums)
+    dp[0] = nums[0]
+    for i in range(1,len(nums)):
+        left = nums[i]
+        if i > 1:
+            left += dp[i-2]
+        right = dp[i-1]
+        dp[i] = max(left, right)
+    return dp[-1]
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        solA = loot(nums[:-1],len(nums)-2)
+        solB = loot(nums[1:],len(nums)-2)
+        return max(solA,solB)
