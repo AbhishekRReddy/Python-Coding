@@ -75,7 +75,29 @@ def ninjaTraining(n: int, points: list[list[int]]) -> int:
     return dp[n-1][3]
 
 
-    
+'''
+DP tabulation with the Space Optimization
+'''
+def ninjaTraining(n: int, points: List[List[int]]) -> int:
+    # Write your code here.
+    dp = [-1]*4 #[prev]
+    #We need to write the base cases for all the day 0 for all the prev
+    #conditions
+    dp[0] = max(points[0][1], points[0][2])
+    dp[1] = max(points[0][0], points[0][2])
+    dp[2] = max(points[0][1], points[0][0])
+    dp[3] = max(points[0][1], max(points[0][2], points[0][0]))
+    for day in range(1,n):
+        temp = [0]*4
+        for prev in range(4):
+            maxi = 0
+            for i in range(3):
+                if i != prev:
+                    point = points[day][i] + dp[i]
+                    maxi = max(maxi,point)
+            temp[prev] = maxi
+        dp = temp
+    return dp[3]
 
 
     
