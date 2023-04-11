@@ -55,7 +55,7 @@ def ninjaTraining(n: int, points: List[List[int]]) -> int:
 '''
 DP With Tabulation method
 '''
-def ninjaTraining(n: int, points: List[List[int]]) -> int:
+def ninjaTraining(n: int, points: list[list[int]]) -> int:
     # Write your code here.
     dp = [ [-1]*4 for i in range(n)] #dp[day][prev]
     #We need to write the base cases for all the day 0 for all the prev
