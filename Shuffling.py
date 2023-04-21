@@ -3,7 +3,7 @@ https://leetcode.com/problems/shuffle-the-array/description/
 '''
 
 class Solution:
-    def shuffle(self, nums: List[int], n: int) -> List[int]:
+    def shuffle(self, nums: list[int], n: int) -> list[int]:
         ans = []
         for i in range(n):
             ans.append(nums[i])
