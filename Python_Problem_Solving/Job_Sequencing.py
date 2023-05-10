@@ -6,7 +6,7 @@ def jobScheduling(jobs):
     
     jobs.sort(key = lambda x : x[1],reverse = True)
     maxi = max(jobs, key = lambda x:x[0])[0]
-    tracker = [-1] * maxi
+    tracker = {i:-1 for i in range(maxi)}
     profit = 0
     for job in jobs:
         x = job[0]
